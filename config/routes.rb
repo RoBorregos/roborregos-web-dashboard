@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   authenticate :member do
     root to: 'members#index', as: :authenticated_root
-    resources :categories
+    resources :categories, except: [:edit, :update]
     resources :members
     resources :service_apps, only: [:index, :create, :destroy]
   end
