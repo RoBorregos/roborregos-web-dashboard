@@ -25,9 +25,13 @@ Rails.application.routes.draw do
       resources :members, only: [:index, :show] 
       get 'members/actions/showByUsername', to: 'members#showByUsername'
 
+      resources :components, only: [:index, :show]
+      resources :component_categories, only: [:index, :show]
+      
       resources :reservations, only: [:index, :create, :show]
       get 'reservations/actions/showHistoryByUsername', to: 'reservations#showHistoryByUsername'
       get 'reservations/actions/showCurrentByUsername', to: 'reservations#showCurrentByUsername'
+
     end
   end
 end
