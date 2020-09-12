@@ -17,6 +17,7 @@
 //= require popper
 //= require bootstrap
 //= require bootstrap-notify.min
+//= require bootstrap-datepicker
 //= require clipboard
 //= require_tree .
 

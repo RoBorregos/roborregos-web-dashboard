@@ -3,6 +3,7 @@ es:
     sidebar:
       title: 'RoBorregos'
       members: 'Miembros'
+      events: 'Eventos'
       teams: 'Equipos'
       service_apps: 'Service Apps'
       sign_out: 'Cerrar Sesión'
@@ -64,6 +65,47 @@ es:
       label_role: 'Área:'
       label_start_date: 'Fecha de inicio:'
       label_generation: 'Generación:'
+  events:
+    index:
+      title: 'Eventos'
+      return: 'Regresar'
+      sort_by: 'Ordenar por'
+      register: 'Registrar'
+      sort_by_role: 'Rol'
+      sort_by_major: 'Carrera'
+      sort_by_status: 'Estatus'
+      sort_by_generation: 'Generación'
+    event:
+      delete_confirmation: '¿Estás seguro de que quieres eliminar este evento?'
+      tooltip_edit: 'Editar'
+      tooltip_view: 'Detalles'
+      tooltip_delete: 'Eliminar'
+    show:
+      return: 'Regresar'
+      edit: 'Editar'
+      delete: 'Eliminar'
+      delete_confirmation: '¿Estás seguro de que quieres eliminar este evento?'
+      section_title: "Información General"
+      label_name: 'Nombre:'
+      label_start_date: 'Fecha Inicio:'
+      label_end_date: 'Fecha Terminación:'
+      label_sponsor_id: 'Patrocinador Involucrado:'
+    new:
+      title: 'Nuevo evento'
+      submit: 'Guardar'
+      cancel: 'Regresar'
+    edit:
+      title: 'Editar - %{event}'
+      submit: 'Guardar'
+      cancel: 'Regresar'
+    general_info_form:
+      section_title: 'Información General'
+      label_name: 'Nombre:'
+      label_start_date: 'Fecha Inicio:'
+      label_end_date: 'Fecha Terminación:'
+      label_sponsor_id: 'Patrocinador Involucrado:'
+      label_description: 'Descripción:'
+      no_related_sponsor: 'Sin patrocinador relacionado'
   teams:
     team:
       delete_confirmation: '¿Estás seguro de que quieres eliminar este equipo?'
@@ -131,6 +173,8 @@ es:
       affiliated: 'Afiliado'
   messages:
     errors:
+      could_not_save_team: 'Ha sucedido un error al guardar este equipo, inténtalo de nuevo más tarde.'
+      could_not_save_event: 'Ha sucedido un error al guardar este evento, inténtalo de nuevo más tarde.'
       could_not_save_member: 'Ha sucedido un error al guardar este miembro, inténtalo de nuevo más tarde.'
       could_not_save_service_app: 'Ha sucedido un error al guardar este service app, inténtalo de nuevo más tarde.'
   date:

@@ -1,0 +1,53 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'calendar fw', class: 'mr-2'
+        = @event.name
+
+  .nav-row.row.align-items-end.pb-2
+    .col-3
+      = link_to events_path, class: 'btn btn-info' do
+        = fa_icon 'angle-left', class: 'mr-2'
+        = t('.return')
+    .col-6
+      = link_to edit_event_path(@event.id), class: 'btn btn-warning' do
+        = fa_icon 'edit', class: 'mr-2'
+        = t('.edit')
+    .col-3
+      = link_to event_path(@event.id), method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'btn btn-danger' do
+        = fa_icon 'trash-o', class: 'mr-2'
+        = t('.delete')
+
+#event_info_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #general_info.card
+        .card-header
+          = fa_icon 'info fw', class: 'mr-2'
+          = t('.section_title')
+        ul.list-group.list-group-flush
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_start_date')
+              .col-8
+                = @event.start_date.to_date.strftime('%e %b, %Y')
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_end_date')
+              .col-8
+                = @event.end_date.to_date.strftime('%e %b, %Y')
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_description')
+              .col-8
+                = @event.description
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_sponsor_id')
+              .col-8
+                = @event.sponsor_name
