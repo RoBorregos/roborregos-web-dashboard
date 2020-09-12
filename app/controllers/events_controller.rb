@@ -24,8 +24,6 @@ class EventsController < BaseController
 
   def edit
     @event = Event.find(params[:id])
-    @event.start_date=@event.start_date.to_date.strftime("%d/%m/%Y")
-    @event.end_date=@event.end_date.to_date.strftime("%d/%m/%Y")
   end
 
   def update
