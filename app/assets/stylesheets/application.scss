@@ -4,6 +4,7 @@
 @import 'font-awesome';
 @import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
 
+@import 'categories';
 @import 'devise';
 @import 'events';
 @import 'members';
@@ -14,10 +15,10 @@
 header {
   position: relative;
   background: linear-gradient(
-    rgba(18, 24, 30, 0.5),
-    rgba(18, 24, 30, 0.5)
-    ),
-    url(header_background.jpg);
+      rgba(18, 24, 30, 0.5),
+      rgba(18, 24, 30, 0.5)
+      ),
+      url(header_background.jpg);
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;

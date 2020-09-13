@@ -1,0 +1,16 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'list-alt fw', class: 'mr-2'
+        = t('.title')
+
+#new_category_section.content-section
+  .row.justify-content-center
+    .col-md-9
+      = form_with model: @category, id: 'new_category_form' do |f|
+        = render partial: 'info_form', locals: { f: f }
+        
+        .submit-category-form-section
+          = f.submit t('.submit'), class: 'btn btn-success'
+          = link_to t('.cancel'), categories_path, class: 'btn btn-danger ml-3'
