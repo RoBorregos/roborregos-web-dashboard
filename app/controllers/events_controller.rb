@@ -18,7 +18,7 @@ class EventsController < BaseController
       redirect_to @event
     else
       flash[:error] = t('messages.errors.could_not_save_event')
-      redirect_to :new
+      redirect_to new_event_url
     end
   end
 
@@ -33,7 +33,7 @@ class EventsController < BaseController
       redirect_to @event
     else
       flash[:error] = t('messages.errors.could_not_save_event')
-      redirect_to :edit
+      redirect_to edit_event_path
     end
   end
 

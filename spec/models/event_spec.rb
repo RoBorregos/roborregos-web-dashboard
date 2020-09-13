@@ -12,7 +12,7 @@ RSpec.describe Event, type: :model do
   end
 
   context 'associations' do
-    it { should belong_to(:sponsor) }
+    it { should belong_to(:sponsor).optional }
     it { should have_many(:event_members) }
     it { should have_many(:members).through(:event_members) }
   end
