@@ -4,7 +4,7 @@ module EventsHelper
   end
 
   def getDateFormatted(field)
-    if @event
+    if !@event.start_date.nil?
       if field.to_s == "start_date"
         return @event.start_date.to_date.strftime('%e %b, %Y')
       end 
@@ -13,7 +13,7 @@ module EventsHelper
       end 
     end
   end
-  
+
   def datepicker_field(form, field)
     form.text_field(
       field,
