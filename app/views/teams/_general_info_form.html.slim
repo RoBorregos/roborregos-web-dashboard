@@ -1,0 +1,19 @@
+#general_info_form.card
+  .card-header
+    = fa_icon 'info fw', class: 'mr-2'
+    = t('.section_title_general_info')
+  .card-body
+    .row.justify-content-center
+      .col-md-12
+        .form-group.row
+          = f.label :name, t('.label_name'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :name, class: 'form-control', required: true
+        .form-group.row
+          = f.label :github_url, t('.label_github_url'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :github_url, class: 'form-control'
+        .form-group.row
+          = f.label :category_id, t('.label_category_id'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.select :category_id, category_options, {}, class: 'form-control', required: true

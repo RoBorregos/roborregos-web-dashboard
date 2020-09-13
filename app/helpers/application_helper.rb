@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def sidebar_classes(controller)
     'active' if controller_name == controller
   end

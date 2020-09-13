@@ -5,6 +5,7 @@ ruby '2.5.3'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap-datepicker-rails', '>=1.9.0.1'
 gem 'clipboard-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'

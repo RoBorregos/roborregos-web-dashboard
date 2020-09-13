@@ -1,0 +1,27 @@
+#general_info_form.card
+  .card-header
+    = fa_icon 'info fw', class: 'mr-2'
+    = t('.section_title')
+  .card-body
+    .row.justify-content-center
+      .col-md-12
+        .form-group.row
+          = f.label :name, t('.label_name'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :name, class: 'form-control', required: true
+        .form-group.row
+          = f.label :start_date, t('.label_start_date'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = datepicker_field(f, :start_date)
+        .form-group.row
+          = f.label :end_date, t('.label_end_date'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = datepicker_field(f, :end_date)
+        .form-group.row
+          = f.label :description, t('.label_description'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :description, class: 'form-control'
+        .form-group.row
+          = f.label :sponsor_id, t('.label_sponsor_id'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.select :sponsor_id, sponsor_options, { include_blank: t('.no_related_sponsor')}, class: 'form-control'

@@ -1,13 +1,16 @@
 @import 'animate';
 @import 'bootstrap';
+@import 'bootstrap-datepicker';
 @import 'font-awesome';
 @import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
 
 @import 'categories';
 @import 'devise';
+@import 'events';
 @import 'members';
 @import 'sidebar';
 @import 'styles';
+@import 'teams';
 
 header {
   position: relative;
@@ -25,7 +28,7 @@ header {
   text-align: center;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
 }
-  
+
 header .title-row {
   height: 80%;
 }

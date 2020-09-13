@@ -1,0 +1,19 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'calendar fw', class: 'mr-2'
+        = t('.title')
+  .nav-row.row.align-items-end.pb-2
+    .col-10
+    .col-2
+      = link_to new_event_path, class: 'btn btn-success' do
+        = fa_icon 'calendar-plus-o', class: 'mr-2'
+        = t('.register')
+
+#events_list_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #events_list.card
+        ul.list-group.list-group-flush
+          = render partial: 'event', collection: @events
