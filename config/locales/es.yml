@@ -3,8 +3,8 @@ es:
     sidebar:
       title: 'RoBorregos'
       members: 'Miembros'
-      events: 'Eventos'
       categories: 'Categorías'
+      events: 'Eventos'
       teams: 'Equipos'
       service_apps: 'Service Apps'
       sign_out: 'Cerrar Sesión'
