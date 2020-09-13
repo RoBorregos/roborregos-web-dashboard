@@ -17,5 +17,12 @@ module App
     # the framework and any gems in your application.
 
     config.i18n.default_locale = :es
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: :any
+      end
+    end
   end
 end
