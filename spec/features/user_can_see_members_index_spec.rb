@@ -14,7 +14,9 @@ feature 'User can see member index' do
     expect(page).to have_content('Miembros')
     expect(page).to have_content('Registrar')
     expect(page).to have_content('Ordenar por')
-    expect(find('.single-member', match: :first)).to have_content(@member_inactive.full_name)
+    expect(find('.single-member', match: :first)).to have_content(@member_inactive.full_name) 
+                                                  .or have_content(@member_electronics.full_name)
+                                                  .or have_content(@member_software.full_name)
   end
 
   scenario 'with sort_by eq to :role' do
