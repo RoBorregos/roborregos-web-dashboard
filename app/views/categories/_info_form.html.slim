@@ -1,0 +1,19 @@
+#category_info_form.card
+  .card-header
+    = fa_icon 'info fw', class: 'mr-2'
+    = t('.section_title_info')
+  .card-body
+    .row.justify-content-center
+      .col-md-12
+        .form-group.row
+          = f.label :name, t('.label_name'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :name, class: 'form-control', required: true
+        .form-group.row
+          = f.label :description, t('.label_description'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :description, class: 'form-control'
+        .form-group.row
+          = f.label :reference_url, t('.label_reference_url'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :reference_url, class: 'form-control'

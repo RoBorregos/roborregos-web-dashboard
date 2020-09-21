@@ -17,6 +17,7 @@ class ServiceAppsController < BaseController
   def destroy
     @service_app.find(params[:id])
     @service_app.destroy
+
     redirect_to service_apps_path
   end
 

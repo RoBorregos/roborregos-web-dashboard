@@ -1,0 +1,11 @@
+li.list-group-item.single-category
+  .row
+    .col
+      .d-block
+        = category.name
+    .col-3.pull-right
+      .pull-right
+        = link_to category_path(category.id), class: 'text-info' do
+          = fa_icon 'eye fw', class: 'mr-2', 'data-toggle': 'tooltip', 'data-placement': 'top', title: t('.tooltip_view')
+        = link_to category_path(category.id), method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'text-danger' do
+          = fa_icon 'trash-o', class: 'mr-2', 'data-toggle': 'tooltip', 'data-placement': 'top', title: t('.tooltip_delete')

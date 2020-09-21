@@ -1,0 +1,38 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'list-alt fw', class: 'mr-2'
+        = @category.name
+
+  .nav-row.row.align-items-end.pb-2
+    .col-3
+      = link_to categories_path, class: 'btn btn-info' do
+        = fa_icon 'angle-left', class: 'mr-2'
+        = t('.return')
+    .col-6
+    .col-3
+      = link_to category_path(@category.id), method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'btn btn-danger' do
+        = fa_icon 'trash-o', class: 'mr-2'
+        = t('.delete')
+
+#category_info_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #category_info.card
+        .card-header
+          = fa_icon 'info fw', class: 'mr-2'
+          = t('.section_title_info')
+        ul.list-group.list-group-flush
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_description')
+              .col-8
+                = @category.description
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_reference_url')
+              .col-8
+                = @category.reference_url
