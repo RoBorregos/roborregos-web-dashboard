@@ -1,50 +1,10 @@
-header {
-  position: relative;
-  background: linear-gradient(
-    rgba(18, 24, 30, 0.5),
-    rgba(18, 24, 30, 0.5)
-    ),
-    url(header_background.jpg);
-  background-size: cover;
-  background-position: top center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  transition: transform 0.5s, padding-right 0.5s ease;
-  height: 35vh;
-  text-align: center;
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
-}
-
-header .title-row {
-  height: 80%;
-}
-
-header .nav-row {
-  height: 20%;
-}
-
-.content-section {
-  margin: 35px 0;
-}
-
-.card-header {
-  text-align: center;
-}
-
 .submit-member-form-section {
   margin-top: 30px;
   text-align: center;
 }
 
-.card {
-  box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3);
-}
-
-.not-first-card {
-  margin-top: 30px;
-}
-
 #new_member_section label,
+#edit_member_section label,
 #member_info_section .info-title {
   text-align: right;
 }

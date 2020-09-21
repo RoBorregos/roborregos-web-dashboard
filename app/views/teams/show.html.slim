@@ -1,0 +1,41 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'users fw', class: 'mr-2'
+        = @team.name
+
+  .nav-row.row.align-items-end.pb-2
+    .col-3
+      = link_to teams_path, class: 'btn btn-info' do
+        = fa_icon 'angle-left', class: 'mr-2'
+        = t('.return')
+    .col-6
+      = link_to edit_team_path(@team.id), class: 'btn btn-warning' do
+        = fa_icon 'edit', class: 'mr-2'
+        = t('.edit')
+    .col-3
+      = link_to team_path(@team.id), method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'btn btn-danger' do
+        = fa_icon 'trash-o', class: 'mr-2'
+        = t('.delete')
+
+#team_info_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #general_info.card
+        .card-header
+          = fa_icon 'info fw', class: 'mr-2'
+          = t('.section_title')
+        ul.list-group.list-group-flush
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_github_url')
+              .col-8
+                = @team.github_url
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_category')
+              .col-8
+                = @team.category_name

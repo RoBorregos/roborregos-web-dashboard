@@ -1,9 +1,54 @@
 @import 'animate';
 @import 'bootstrap';
+@import 'bootstrap-datepicker';
 @import 'font-awesome';
 @import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
 
+@import 'categories';
 @import 'devise';
+@import 'events';
 @import 'members';
 @import 'sidebar';
 @import 'styles';
+@import 'teams';
+
+header {
+  position: relative;
+  background: linear-gradient(
+      rgba(18, 24, 30, 0.5),
+      rgba(18, 24, 30, 0.5)
+      ),
+      url(header_background.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: transform 0.5s, padding-right 0.5s ease;
+  height: 35vh;
+  text-align: center;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+header .title-row {
+  height: 80%;
+}
+
+header .nav-row {
+  height: 20%;
+}
+
+.content-section {
+  margin: 35px 0;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card {
+  box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.not-first-card {
+  margin-top: 30px;
+}

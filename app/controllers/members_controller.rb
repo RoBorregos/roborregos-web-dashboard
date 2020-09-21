@@ -47,6 +47,7 @@ class MembersController < BaseController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
+
     redirect_to members_path
   end
 

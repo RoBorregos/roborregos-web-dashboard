@@ -1,0 +1,16 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'users fw', class: 'mr-2'
+        = t('.title', team: @team.name)
+
+#edit_team_section.content-section
+  .row.justify-content-center
+    .col-md-9
+      = form_with model: @team, id: 'edit_team_form' do |f|
+        = render partial: 'general_info_form', locals: { f: f }
+
+        .submit-team-form-section
+          = f.submit t('.submit'), class: 'btn btn-success'
+          = link_to t('.cancel'), team_path(id: @team.id), class: 'btn btn-danger ml-3'

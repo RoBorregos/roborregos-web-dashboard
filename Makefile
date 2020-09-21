@@ -23,7 +23,7 @@ up: clean
 
 #: Removes the containers running in background
 down:
-	@docker-compose down --remove-orphans
+	@docker-compose down --remove-orphans 2> /dev/null; true
 
 #: Restarts the web service
 restart:
@@ -35,11 +35,11 @@ logs:
 
 #: Fires up a bash session inside the web service container
 shell:
-	@docker-compose run web bash
+	@docker-compose run web bash 2> /dev/null
 
 #: Fires up a bash session inside the rails console in web service container
 console:
-	@docker-compose run web rails c
+	@docker-compose run web rails c 2> /dev/null
 
 #: Runs RSpec with docker-compose test service
 test:

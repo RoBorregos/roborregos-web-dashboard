@@ -5,10 +5,10 @@ header
         = fa_icon 'user fw', class: 'mr-2'
         = t('.title', member: @member.full_name)
 
-#new_member_section.content-section
+#edit_member_section.content-section
   .row.justify-content-center
     .col-md-9
-      = form_with model: @member, id: 'new_member_form' do |f|
+      = form_with model: @member, id: 'edit_member_form' do |f|
         = render partial: 'personal_info_form', locals: { f: f }
         = render partial: 'contact_info_form', locals: { f: f }
         = render partial: 'roborregos_info_form', locals: { f: f }

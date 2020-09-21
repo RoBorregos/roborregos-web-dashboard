@@ -8,4 +8,8 @@ class Team < ApplicationRecord
   has_many :achievements
   has_many :team_members
   has_many :members, through: :team_members
+
+  def category_name
+    self.category.name
+  end
 end

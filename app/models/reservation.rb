@@ -1,4 +1,7 @@
 class Reservation < ApplicationRecord
+  alias_attribute :rdetail,  :reservation_detail
+  alias_attribute :rdetails, :reservation_details
+
   validates :member,
             presence: true
 
