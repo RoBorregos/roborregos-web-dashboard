@@ -18,7 +18,7 @@ class TeamsController < BaseController
       redirect_to @team
     else
       flash[:error] = t('messages.errors.could_not_save_team')
-      redirect_to :new
+      redirect_to new_team_url
     end
   end
 
@@ -33,7 +33,7 @@ class TeamsController < BaseController
       redirect_to @team
     else
       flash[:error] = t('messages.errors.could_not_save_team')
-      redirect_to :edit
+      redirect_to edit_team_path
     end
   end
 

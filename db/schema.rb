@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_010927) do
+ActiveRecord::Schema.define(version: 2020_08_04_224942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,23 @@ ActiveRecord::Schema.define(version: 2020_05_04_010927) do
     t.string "reference_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "component_categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "components", force: :cascade do |t|
+    t.string "name"
+    t.bigint "component_category_id"
+    t.string "img_path"
+    t.integer "stock"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["component_category_id"], name: "index_components_on_component_category_id"
   end
 
   create_table "event_members", force: :cascade do |t|
