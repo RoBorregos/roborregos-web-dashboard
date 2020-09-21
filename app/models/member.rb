@@ -23,6 +23,7 @@ class Member < ApplicationRecord
   has_many :events, through: :event_members
   has_many :arrangement_members
   has_many :arrangements, through: :arrangement_members
+  has_many :reservations
 
   scope :sorted_by_role, -> { order('role') }
   scope :sorted_by_major, -> { order('major') }

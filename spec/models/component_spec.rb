@@ -13,5 +13,6 @@ RSpec.describe Component, type: :model do
 
   context 'associations' do
     it { should belong_to(:component_category) }
+    it { should have_many(:reservation_details) }
   end
 end

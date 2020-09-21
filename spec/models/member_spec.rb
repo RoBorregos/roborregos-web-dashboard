@@ -26,5 +26,6 @@ RSpec.describe Member, type: :model do
     it { should have_many(:arrangements).through(:arrangement_members) }
     it { should have_many(:event_members) }
     it { should have_many(:events).through(:event_members) }
+    it { should have_many(:reservations) }
   end
 end
