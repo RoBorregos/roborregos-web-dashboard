@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    image: postgres:12.0
+    image: postgres:latest
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
 
@@ -15,7 +15,7 @@ services:
       - db
     environment: &app_environment
       RAILS_ENV: 'test'
-
+      
   web:
     <<: *app
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"

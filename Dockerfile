@@ -1,22 +1,16 @@
 FROM ruby:2.5.3
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 
-RUN apt-get update -qq && \
-    apt-get install -y \
-    postgresql-client \
-    build-essential \
-    nodejs \
-    nano \
-    git && \
-    rm -rf /var/lib/apt/lists/*
 RUN mkdir /app
 
 WORKDIR /app
-COPY Gemfile* /app/
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
 
 RUN gem install bundler -v 2.0.1
-RUN bundle install --jobs=4 --retry=3
+RUN bundle install --jobs=4 --retry=3 
+#--without development test
 
 COPY . /app
 
@@ -26,4 +20,4 @@ ENTRYPOINT [ "docker-entrypoint.sh" ]
 
 EXPOSE 3000
 
-CMD [ "rails", "serve", "-b", "0.0.0.0" ]
+CMD [ "rails", "server", "-b", "0.0.0.0" ]
