@@ -9,8 +9,7 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 
 RUN gem install bundler -v 2.0.1
-RUN bundle install --jobs=4 --retry=3 
-#--without development test
+RUN bundle install --jobs=4 --retry=3 --without development test
 
 COPY . /app
 
