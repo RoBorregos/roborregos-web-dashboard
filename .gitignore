@@ -27,3 +27,5 @@
 /config/master.key
 
 /docker-compose.override.yml
+
+testQuery.txt

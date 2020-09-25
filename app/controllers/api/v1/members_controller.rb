@@ -11,4 +11,17 @@ class Api::V1::MembersController < Api::V1::BaseController
 
     render json: @members
   end
+
+  def show
+    @member = Member.find(params[:id])
+    
+    render json: @member
+  end
+  
+  def showByUsername
+    @member = Member.find_by(username: params[:username])
+    
+    render json: @member
+  end
+  
 end

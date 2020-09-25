@@ -16,6 +16,5 @@ test:
 
 production:
   <<: *default
-  database: roborregos_dashboard_production
-  username: roborregos
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  database: roborregos_dashboard_development
+#  url: <%= ENV['DATABASE_URL'] %>

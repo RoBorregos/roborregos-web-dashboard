@@ -25,7 +25,12 @@ Rails.application.routes.draw do
       post 'sign_in', to: 'sessions#create'
       post 'sign_out', to: 'sessions#destroy'
 
-      resources :members, only: [:index, :show]
+      resources :members, only: [:index, :show] 
+      get 'members/actions/showByUsername', to: 'members#showByUsername'
+
+      resources :reservations, only: [:index, :create, :show]
+      get 'reservations/actions/showHistoryByUsername', to: 'reservations#showHistoryByUsername'
+      get 'reservations/actions/showCurrentByUsername', to: 'reservations#showCurrentByUsername'
     end
   end
 end
