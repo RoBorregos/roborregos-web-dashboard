@@ -33,13 +33,14 @@ out our public site at [roborregos.com](https://roborregos.com) or
 
 | Name | Email | Github | Role |
 | ---- | ----- | ------ | ---- |
-| Jose Eduardo Sanchez | [gallo.sanchez23@gmail.com](mailto:gallo.sanchez23@gmail.com) | [@gallosanchez23](https://github.com/gallosanchez23) | PM & Developer |
+| José Eduardo Sanchez | [gallo.sanchez23@gmail.com](mailto:gallo.sanchez23@gmail.com) | [@gallosanchez23](https://github.com/gallosanchez23) | Developer |
+| José Cisneros Morales | [joseacisnerosm@gmail.com](mailto:joseacisnerosm@gmail.com) | [@Josecisneros001](https://github.com/Josecisneros001) | Developer |
 
 ### Management tools
 
 You should ask for access to these tools if you don't have it already:
 
-* [Github repo](https://github.com/gallosanchez23/roborregos-web-dashboard)
+* [Github repo](https://github.com/RoBorregos/roborregos-web-dashboard.git)
 * [Heroku](https://www.heroku.com/)
 
 
@@ -72,12 +73,12 @@ steps:
 	SSH:
 
 	```bash
-	$ git clone git@github.com:gallosanchez23/roborregos-web-dashboard.git
+	$ git clone git@github.com:RoBorregos/roborregos-web-dashboard.git
 	```
 
 	or HTTPS:
 	```bash
-	$ git clone https://github.com/gallosanchez23/roborregos-web-dashboard.git
+	$ git clone https://github.com/RoBorregos/roborregos-web-dashboard.git
 	```
 
 2. Enter the project's directory
@@ -182,12 +183,12 @@ $ make test
 	SSH:
 
 	```bash
-	$ git clone git@github.com:gallosanchez23/roborregos-web-dashboard.git
+	$ git clone git@github.com:RoBorregos/roborregos-web-dashboard.git
 	```
 
 	or HTTPS:
 	```bash
-	$ git clone https://github.com/gallosanchez23/roborregos-web-dashboard.git
+	$ git clone https://github.com/RoBorregos/roborregos-web-dashboard.git
 	```
 
 2. Enter the project's directory
