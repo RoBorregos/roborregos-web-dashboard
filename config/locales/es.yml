@@ -203,6 +203,8 @@ es:
       inactive: 'Inactivo'
       affiliated: 'Afiliado'
   messages:
+    failed_request: 'Petición Fallida'
+    success_request: 'Petición Exitosa'
     errors:
       could_not_save_member: 'Ha sucedido un error al guardar este miembro, inténtalo de nuevo más tarde.'
       could_not_save_category: 'Ha sucedido un error al guardar esta categoría, inténtalo de nuevo más tarde.'

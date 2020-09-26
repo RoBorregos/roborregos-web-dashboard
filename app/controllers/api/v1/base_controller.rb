@@ -1,6 +1,7 @@
 class Api::V1::BaseController < ApplicationController
   before_action :authorize_service
-
+  protect_from_forgery with: :null_session
+  
   private
 
   def authorize_service
