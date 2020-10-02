@@ -78,7 +78,7 @@ class Api::V1::ReservationsController < Api::V1::BaseController
         quantity = detail[:quantity].to_i
         while i < quantity
           @reservationsDetail = ReservationDetail.where(reservation: @reservation, component_id: detail[:component]).where(status: 2).take
-          if @reservationsDetail
+          if @reservationsDetail.present?
             @reservationsDetail.returned_at = DateTime.now
             @reservationsDetail.status = 3
             @reservationsDetail.uuid = @uuidReservationDetail
@@ -89,7 +89,7 @@ class Api::V1::ReservationsController < Api::V1::BaseController
       }
       @status = 200
       @message = t('messages.success_request')
-      @data = @reservation
+      @data = { :uuid => @uuidReservationDetail, :member => @reservation.member_id}
     else
       @status = 400
       @message = t('messages.failed_request') + " - " + @reservation.errors.full_messages.join(', ')
@@ -103,7 +103,7 @@ class Api::V1::ReservationsController < Api::V1::BaseController
   def showReturned
     @reservations = Reservation.where(member: Member.find_by(token: @member_token))
     @reservationlist = @reservations.map { |reservation|
-      @reservationsDetails = ReservationDetail.select('component_id, COUNT(*) as quantity, cast(created_at as date) as created_date, cast(returned_at as date) as returned_date').where(reservation: reservation).where("status >= 4").group(:component_id, :created_date, :returned_date)
+      @reservationsDetails = ReservationDetail.select('component_id, COUNT(*) as quantity, cast(created_at as date) as created_date, cast(returned_at as date) as returned_date').where(reservation: reservation).where("status = 4").group(:component_id, :created_date, :returned_date)
       if @reservationsDetails.present?
         { :id => reservation.id, :details => @reservationsDetails, :created_at => reservation.created_at, :updated_at => reservation.updated_at}
       else
