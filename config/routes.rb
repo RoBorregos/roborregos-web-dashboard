@@ -26,8 +26,9 @@ Rails.application.routes.draw do
       post 'sign_out', to: 'sessions#destroy'
 
       resources :members, only: [:index, :show] 
-      get 'members/actions/showByUsername', to: 'members#showByUsername'
-
+      
+      resources :components, only: [:index, :show, :create, :update, :destroy]
+      resources :component_categories, only: [:index, :show, :create, :destroy]
       resources :reservations, only: [:index, :create, :show, :update]
     end
   end
