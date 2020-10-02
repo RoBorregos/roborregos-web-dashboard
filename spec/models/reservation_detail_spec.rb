@@ -7,6 +7,7 @@ RSpec.describe ReservationDetail, type: :model do
   context 'validations' do
     it { should validate_presence_of(:reservation) }
     it { should validate_presence_of(:component) }
+    it { should validate_presence_of(:status) }
     it { should be_valid }
   end
 

@@ -3,8 +3,12 @@ class CreateReservationDetails < ActiveRecord::Migration[5.2]
     create_table :reservation_details do |t|
       t.references :reservation
       t.references :component
-      t.boolean    :returned
+      t.string     :uuid
+      t.datetime   :delivered_at
+      t.datetime   :received_at
       t.datetime   :returned_at
+      t.integer    :status, :default => 1
+      
 
       t.timestamps
     end

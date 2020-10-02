@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_215601) do
+ActiveRecord::Schema.define(version: 2020_09_30_213229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_215601) do
     t.integer "stock"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "uuid"
     t.index ["component_category_id"], name: "index_components_on_component_category_id"
   end
 
@@ -130,8 +131,11 @@ ActiveRecord::Schema.define(version: 2020_08_06_215601) do
   create_table "reservation_details", force: :cascade do |t|
     t.bigint "reservation_id"
     t.bigint "component_id"
-    t.boolean "returned"
+    t.string "uuid"
+    t.datetime "delivered_at"
+    t.datetime "received_at"
     t.datetime "returned_at"
+    t.integer "status", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["component_id"], name: "index_reservation_details_on_component_id"
