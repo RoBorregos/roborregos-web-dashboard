@@ -71,7 +71,7 @@ class Api::V1::ReservationsController < Api::V1::BaseController
         @uuidReservationDetail = SecureRandom.uuid
       end while ReservationDetail.exists?(uuid: @uuidReservationDetail)
 
-      @reservation = Reservation.find_by(id:params[:id], member: Member.find_by(token: @member_token))
+      @reservation = Reservation.find_by(member: Member.find_by(token: @member_token))
       
       params[:details].map { |detail|
         i = 0
