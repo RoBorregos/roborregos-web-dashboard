@@ -44,3 +44,15 @@ console:
 #: Runs RSpec with docker-compose test service
 test:
 	@docker-compose run --rm test
+
+# ----------------------------------------------------------------------
+#  Production
+# ----------------------------------------------------------------------
+deploy:
+	@heroku container:login
+	@heroku container:push web
+	@heroku container:release web
+	@heroku run rake db:migrate
+
+production.shell:
+	@heroku run rails console
