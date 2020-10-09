@@ -23,7 +23,7 @@ RSpec.describe 'Api::V1::Sessions', type: :request do
   end
 
   describe 'POST #destroy' do
-    it 'returns ok status and modifies memebr token' do
+    it 'returns ok status and modifies member token' do
       params = { username: @member.username }
       auth = { Authorization: authenticate_with_tokens(@api_key.access_token, @member.token) }
 

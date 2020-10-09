@@ -15,7 +15,7 @@ RSpec.describe 'Api::V1::Members', type: :request do
 
       create_list :member, 5
 
-      get api_v1_members_path, headers: auth, as: :json
+      get api_v1_members_path, headers: auth, :params => {:showAll => 1}, as: :json
 
       expect(response.status).to eq 200
       expect(parsed_response.size).to eq 6
