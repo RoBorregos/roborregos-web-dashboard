@@ -22,8 +22,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
       end while Member.exists?(token: token)
 
       member.update(token: token)
-
-      head(:ok)
+      render json: member.as_json(only: [:username]), status: 200
     else
       head(:unauthorized)
     end

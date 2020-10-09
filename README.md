@@ -8,7 +8,11 @@ require a valid username and password to see the rest of it, but you can check
 out our public site at [roborregos.com](https://roborregos.com) or
 [roborregos.mx](https://roborregos.mx).
 
+### Production Deployment
+[https://roborregos-dashboard.herokuapp.com/](https://roborregos-dashboard.herokuapp.com/)
 
+### Requests Documentation
+[http://bit.ly/RequestsRoborregosDashboard](http://bit.ly/RequestsRoborregosDashboard)
 
 ## Table of contents
 
