@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     root to: 'members#index', as: :authenticated_root
     
     resources :categories, except: [:edit, :update]
+    resources :components
     resources :events
     resources :members
     resources :teams
