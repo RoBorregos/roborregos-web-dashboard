@@ -1,0 +1,16 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'microchip fw', class: 'mr-2'
+        = t('.title', component_category: @component_category.name)
+
+#edit_component_category_section.content-section
+  .row.justify-content-center
+    .col-md-9
+      = form_with model: @component_category, id: 'edit_component_category_form' do |f|
+        = render partial: 'general_info_form', locals: { f: f }
+
+        .submit-component_category-form-section
+          = f.submit t('.submit'), class: 'btn btn-success'
+          = link_to t('.cancel'), component_category_path(id: @component_category.id), class: 'btn btn-danger ml-3'

@@ -1,0 +1,35 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'microchip fw', class: 'mr-2'
+        = @component_category.name
+
+  .nav-row.row.align-items-end.pb-2
+    .col-3
+      = link_to component_categories_path, class: 'btn btn-info' do
+        = fa_icon 'angle-left', class: 'mr-2'
+        = t('.return')
+    .col-6
+      = link_to edit_component_category_path(@component_category.id), class: 'btn btn-warning' do
+        = fa_icon 'edit', class: 'mr-2'
+        = t('.edit')
+    .col-3
+      = link_to component_category_path(@component_category.id), method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'btn btn-danger' do
+        = fa_icon 'trash-o', class: 'mr-2'
+        = t('.delete')
+
+#component_category_info_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #general_info.card
+        .card-header
+          = fa_icon 'info fw', class: 'mr-2'
+          = t('.section_title')
+        ul.list-group.list-group-flush
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_description')
+              .col-8
+                = @component_category.description

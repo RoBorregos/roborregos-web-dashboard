@@ -168,6 +168,37 @@ es:
       label_img_path: 'Imágen:'
       label_stock: 'Stock:'
       label_category: 'Categoría:'
+  component_categories:
+    index:
+      title: 'Categorías Componentes'
+      return: 'Regresar'
+      sort_by: 'Ordenar por'
+      register: 'Registrar'
+    component_category:
+      delete_confirmation: '¿Estás seguro de que quieres eliminar esta categoría?'
+      tooltip_edit: 'Editar'
+      tooltip_view: 'Detalles'
+      tooltip_delete: 'Eliminar'
+    show:
+      return: 'Regresar'
+      edit: 'Editar'
+      delete: 'Eliminar'
+      delete_confirmation: '¿Estás seguro de que quieres eliminar esta categoría?'
+      section_title: "Información General"
+      label_name: 'Nombre:'
+      label_description: 'Descripción:'
+    new:
+      title: 'Nuevo componente'
+      submit: 'Guardar'
+      cancel: 'Regresar'
+    edit:
+      title: 'Editar - %{component_category}'
+      submit: 'Guardar'
+      cancel: 'Regresar'
+    general_info_form:
+      section_title: 'Información General'
+      label_name: 'Nombre:'
+      label_description: 'Descripción:'
   teams:
     team:
       delete_confirmation: '¿Estás seguro de que quieres eliminar este equipo?'
@@ -198,12 +229,16 @@ es:
       section_title : 'Información General'
       label_category: 'Categoría'
       label_github_url: 'Url de Github'
+  reservations:
+    index:
+      title: 'Reservaciones'
   service_apps:
     index:
       title: 'Service Apps'
       register: 'Registrar'
     service_app:
       access_token_label: 'Access token:'
+      session_token_label: 'Session token:'
     new_service_app_modal:
       title: 'Nuevo Service App'
       submit: 'Guardar'
@@ -238,6 +273,8 @@ es:
     success_request: 'Petición Exitosa'
     errors:
       could_not_save_member: 'Ha sucedido un error al guardar este miembro, inténtalo de nuevo más tarde.'
+      could_not_save_component: 'Ha sucedido un error al guardar este componente, inténtalo de nuevo más tarde.'
+      could_not_save_event: 'Ha sucedido un error al guardar este evento, inténtalo de nuevo más tarde.'
       could_not_save_category: 'Ha sucedido un error al guardar esta categoría, inténtalo de nuevo más tarde.'
       could_not_save_service_app: 'Ha sucedido un error al guardar este service app, inténtalo de nuevo más tarde.'
   date:
