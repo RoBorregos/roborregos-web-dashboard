@@ -10,19 +10,18 @@ nav#sidebar
       = link_to members_path do
         = t('.members')
 
-
     li
       a.dropdown-toggle href='#warehouseSubMenu' data-toggle='collapse' aria-expanded='false'
         | Almácen
       ul.collapse.list-unstyled#warehouseSubMenu
         li
-          a href='#'
+          = link_to reservations_path do
             | Reservaciones
         li
           = link_to components_path do
             | Componentes
         li
-          a href='#'
+          = link_to component_categories_path do
             | Categorias C.
 
     li [ class=sidebar_classes('categories') ]

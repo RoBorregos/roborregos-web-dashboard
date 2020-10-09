@@ -17,7 +17,8 @@ class ComponentsController < BaseController
       @uuidComponent = SecureRandom.uuid
     end while Component.exists?(uuid: @uuidComponent)
 
-    @component = Component.new(component_params, uuid: @uuidComponent)
+    @component = Component.new(component_params)
+    @component.uuid = @uuidComponent
 
     if @component.save
       redirect_to @component
