@@ -21,7 +21,6 @@ gem 'slim'
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'rqrcode'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
