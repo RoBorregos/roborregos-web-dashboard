@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
+    style
+      | table { font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; }
+      | table td, table th { border: 1px solid #ddd; padding: 8px; }
+      | table tr:nth-child(even){background-color: #f2f2f2;}
+      | table tr:hover {background-color: #ddd;}
+      | table th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #000;color: white;}
+      | .center {display: block;margin-left: auto;margin-right: auto;width: 210px;margin-top:20px}
+      | .user_name {color: gray}
+  body
+    h2
+      | Reservación - #{@reservationsDetails.take.created_date}
+    p  
+      | Hola <span class="user_name">#{@member.first_name + " " + @member.fathers_last_name}</span>, gracias por usar el Almácen de Roborregos. 
+    
+    table
+      tr
+        th #
+        th Nombre
+        th Cantidad
+      - @reservationsDetails.each_with_index do |detail, index|
+        tr
+          td 
+            = index + 1
+          td 
+            = detail.component.name
+          td 
+            = detail.quantity
+    img [src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=#{u(@reservationsDetails.take.uuid)}&choe=UTF-8" alt="QR code" class="center"]
