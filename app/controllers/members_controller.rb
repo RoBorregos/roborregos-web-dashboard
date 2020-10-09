@@ -12,8 +12,6 @@ class MembersController < BaseController
 
   def show
     @member = Member.find(params[:id])
-    #Test Mail
-    #MainMailer.sample_email(@member).deliver
   end
 
   def new

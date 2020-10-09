@@ -54,6 +54,10 @@ class Api::V1::ReservationsController < Api::V1::BaseController
           i = i + 1
         end 
       }
+      
+      #Send Email
+      MainMailer.reservation_email(Member.find_by(token: @member_token), @reservation).deliver
+  
       @status = 200
       @message = t('messages.success_request')
       @data = { :id => @reservation.id, :uuid => @uuidReservationDetail, :member => @reservation.member_id, :created_at => @reservation.created_at, :updated_at => @reservation.updated_at}
