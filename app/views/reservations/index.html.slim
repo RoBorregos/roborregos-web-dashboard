@@ -1,0 +1,17 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'list fw', class: 'mr-2'
+        = t('.title')
+  .nav-row.row.align-items-end.pb-2
+    .col-2
+    .col-8
+    .col-2
+
+#reservations_list_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #reservations_list.card
+        ul.list-group.list-group-flush
+          = render partial: 'reservation', collection: @reservations

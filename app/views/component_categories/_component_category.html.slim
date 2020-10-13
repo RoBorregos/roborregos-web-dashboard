@@ -1,0 +1,13 @@
+li.list-group-item.single-component_category
+  .row
+    .col
+      .d-block
+        = component_category.name
+    .col-3.pull-right
+      .pull-right
+        = link_to component_category_path(component_category.id), class: 'text-info' do
+          = fa_icon 'eye fw', class: 'mr-2', 'data-toggle': 'tooltip', 'data-placement': 'top', title: t('.tooltip_view')
+        = link_to edit_component_category_path(component_category.id), class: 'text-secondary' do
+          = fa_icon 'edit', class: 'mr-2', 'data-toggle': 'tooltip', 'data-placement': 'top', title: t('.tooltip_edit')
+        = link_to component_category_path(component_category.id), method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'text-danger' do
+          = fa_icon 'trash-o', class: 'mr-2', 'data-toggle': 'tooltip', 'data-placement': 'top', title: t('.tooltip_delete')

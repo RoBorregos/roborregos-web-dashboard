@@ -1,4 +1,3 @@
-require 'rqrcode_png'
 class MainMailer < ApplicationMailer
 
   def sample_email(member)

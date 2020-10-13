@@ -1,0 +1,19 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'microchip fw', class: 'mr-2'
+        = t('.title')
+  .nav-row.row.align-items-end.pb-2
+    .col-10
+    .col-2
+      = link_to new_component_category_path, class: 'btn btn-success' do
+        = fa_icon 'microchip-plus-o', class: 'mr-2'
+        = t('.register')
+
+#component_categories_list_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #component_categories_list.card
+        ul.list-group.list-group-flush
+          = render partial: 'component_category', collection: @component_categories

@@ -1,0 +1,23 @@
+#general_info_form.card
+  .card-header
+    = fa_icon 'info fw', class: 'mr-2'
+    = t('.section_title')
+  .card-body
+    .row.justify-content-center
+      .col-md-12
+        .form-group.row
+          = f.label :name, t('.label_name'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :name, class: 'form-control', required: true
+        .form-group.row
+          = f.label :img_path, t('.label_img_path'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :img_path, class: 'form-control', required: true
+        .form-group.row
+          = f.label :stock, t('.label_stock'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :stock, class: 'form-control', required: true
+        .form-group.row
+          = f.label :component_category_id, t('.label_category'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.select :component_category_id, component_category_options, { }, class: 'form-control'

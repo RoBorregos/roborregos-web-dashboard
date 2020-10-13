@@ -1,0 +1,24 @@
+li.list-group-item.single-reservation
+      a href='#reservation-#{reservation[:id]}' data-toggle='collapse' aria-expanded='false'
+        .row
+          .col
+            .d-block
+                = status_reservation(reservation[:status])
+                = reservation[:member].full_name
+            small.ml-2
+              .text-secondary.d-inline-block
+                = l(reservation[:created_at], format: :short_date)
+          .col-2.pull-right
+            .d-block
+                | Ver Detalles
+      ul.mt-3.collapse.list-unstyled [id=("reservation-"+(reservation[:id]).to_s) ]
+        - reservation[:details].each do |detail|
+          li
+            .row
+              .col
+                .d-block
+                    = status_reservation(detail.status_before_type_cast)
+                    = detail.quantity.to_s + " - " + detail.component.name
+                small.ml-2
+                  .text-secondary.d-inline-block
+                  
