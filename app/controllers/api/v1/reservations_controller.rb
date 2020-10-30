@@ -107,7 +107,7 @@ class Api::V1::ReservationsController < Api::V1::BaseController
   def showReturned
     @reservations = Reservation.where(member: Member.find_by(token: @member_token))
     @reservationlist = @reservations.map { |reservation|
-      @reservationsDetails = ReservationDetail.select('reservation_details.component_id, components.uuid as component_uuid, COUNT(*) as quantity, cast(reservation_details.created_at as date) as created_date, cast(reservation_details.returned_at as date) as returned_date').joins(:component).where(reservation: reservation).where("status = 4").group(:component_id, :created_date, :returned_date, "components.uuid")
+      @reservationsDetails = ReservationDetail.select('reservation_details.component_id, components.uuid as component_uuid, components.name as component_name, COUNT(*) as quantity, cast(reservation_details.created_at as date) as created_date, cast(reservation_details.returned_at as date) as returned_date').joins(:component).where(reservation: reservation).where("status = 4").group(:component_id, :created_date, :returned_date, "components.uuid", "components.name")
       if @reservationsDetails.present?
         { :id => reservation.id, :details => @reservationsDetails, :created_at => reservation.created_at, :updated_at => reservation.updated_at}
       else
@@ -129,7 +129,7 @@ class Api::V1::ReservationsController < Api::V1::BaseController
   def showCurrent
     @reservations = Reservation.where(member: Member.find_by(token: @member_token))
     @reservationlist = @reservations.map { |reservation|
-      @reservationsDetails = ReservationDetail.select('reservation_details.component_id, components.uuid as component_uuid, COUNT(*) as quantity, cast(reservation_details.created_at as date) as created_date, cast(reservation_details.returned_at as date) as returned_date').joins(:component).where(reservation: reservation).where("status < 4").group(:component_id,:uuid, :created_date, :returned_date, :status, "components.uuid")
+      @reservationsDetails = ReservationDetail.select('reservation_details.component_id, components.uuid as component_uuid, components.name as component_name, COUNT(*) as quantity, cast(reservation_details.created_at as date) as created_date, cast(reservation_details.returned_at as date) as returned_date').joins(:component).where(reservation: reservation).where("status < 4").group(:component_id,:uuid, :created_date, :returned_date, :status, "components.uuid", "components.name")
       if @reservationsDetails.present?
         { :id => reservation.id, :details => @reservationsDetails, :created_at => reservation.created_at, :updated_at => reservation.updated_at}
       else
@@ -151,7 +151,7 @@ class Api::V1::ReservationsController < Api::V1::BaseController
   def showHistory
     @reservations = Reservation.where(member: Member.find_by(token: @member_token))
     @reservationlist = @reservations.map { |reservation|
-      @reservationsDetails = ReservationDetail.select('reservation_details.component_id, components.uuid as component_uuid, COUNT(*) as quantity, cast(reservation_details.created_at as date) as created_date, cast(reservation_details.returned_at as date) as returned_date').joins(:component).where(reservation: reservation).group(:component_id, :created_date, :returned_date, :status, "components.uuid")
+      @reservationsDetails = ReservationDetail.select('reservation_details.component_id, components.uuid as component_uuid, components.name as component_name, COUNT(*) as quantity, cast(reservation_details.created_at as date) as created_date, cast(reservation_details.returned_at as date) as returned_date').joins(:component).where(reservation: reservation).group(:component_id, :created_date, :returned_date, :status, "components.uuid", "components.name")
       { :id => reservation.id, :details => @reservationsDetails, :created_at => reservation.created_at, :updated_at => reservation.updated_at}
     }
     if @member_token.present?
