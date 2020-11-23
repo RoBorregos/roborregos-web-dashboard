@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
   validates :name,
-            :description
+            :description,
             presence: true
 end
