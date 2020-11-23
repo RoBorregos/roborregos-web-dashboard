@@ -1,5 +1,6 @@
 class Api::V1::MembersController < Api::V1::BaseController
   def index
+    @data = nil
     if params[:showAll]
       params[:sort_by] ||= :generation
       @members = {
@@ -9,16 +10,27 @@ class Api::V1::MembersController < Api::V1::BaseController
         generation: Member.all.sorted_by_generation,
       }.fetch(params[:sort_by]&.to_sym)
 
-      render json: @members
+      @data = @members
     else
       @member = Member.find_by(token: @member_token)
-      render json: @member
+      @data = @member
     end
+    @status = 200
+    @message = t('messages.success_request')
+    render json: {status:@status, message: @message,data: @data};
   end
 
   def show
-    @member = Member.find(params[:id])
-    render json: @member
+    if Member.where(id: params[:id]).empty?
+      @status = 400
+      @message = t('messages.failed_request')
+      @data = nil
+    else
+      @status = 200
+      @message = t('messages.success_request')
+      @data = Member.find(params[:id])
+    end
+    render json: {status:@status, message: @message,data: @data};
   end
   
 end

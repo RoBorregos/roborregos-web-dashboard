@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_30_213229) do
+ActiveRecord::Schema.define(version: 2020_11_23_202349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 2020_09_30_213229) do
     t.bigint "sponsor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
     t.index ["sponsor_id"], name: "index_events_on_sponsor_id"
   end
 
@@ -124,8 +125,18 @@ ActiveRecord::Schema.define(version: 2020_09_30_213229) do
     t.string "username", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "token"
+    t.string "photo"
     t.index ["token"], name: "index_members_on_token", unique: true
     t.index ["username"], name: "index_members_on_username", unique: true
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "image"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reservation_details", force: :cascade do |t|
