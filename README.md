@@ -180,6 +180,25 @@ $ make console
 $ make test
 ```
 
+🌟🌟🌟 - To deploy container, build docker image from current dockerfile and deploy it in server, run dp migration:
+
+```bash
+$ make deploy.container
+```
+
+🌟🌟🌟 - To deploy container, build docker image using heroku.yml and deploy it in server, run dp migration:
+
+```bash
+$ make deploy.branch
+```
+
+🌟🌟🌟 - To fire up a bash session inside the production container and
+execute `rails c` command to place you inside rails console:
+
+```bash
+$ make production.shell
+```
+
 ### Setup with Docker
 
 1. Clone the project repository on your local machine.
