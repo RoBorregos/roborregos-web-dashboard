@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'sign_in', to: 'sessions#create'
       post 'sign_out', to: 'sessions#destroy'
-      post 'join_request', to: 'mails#join_request' 
+      post 'join_mail', to: 'mails#join_mail' 
 
       resources :components, only: [:index, :show, :create, :update, :destroy]
       resources :component_categories, only: [:index, :show, :create, :destroy]

@@ -9,7 +9,7 @@ class MainMailer < ApplicationMailer
     @from_name = from_name
     @message = message
     @reply_to = reply_to
-    mail(to: "joseacisnerosm@gmail.com", subject: from_name + ' wants to join!')
+    mail(to: "roborregosteam@gmail.com", subject: from_name + ' wants to join!')
   end
 
   def join_request_response(from_name, position, reply_to)
